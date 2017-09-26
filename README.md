@@ -45,9 +45,9 @@ app.listen(8000)
 ### Public Fields & Methods
 
 
-| constructor            | remark                       |
-| ---------------------- | ---------------------------- |
-| new restal(model, uri) | create a restal api instance |
+| constructor        | remark                       |
+| ------------------ | ---------------------------- |
+| Restal(model, uri) | create a restal api instance |
 
 | public field | remark                                    |
 | ------------ | ----------------------------------------- |
@@ -79,7 +79,7 @@ After injection, APIs are routed by the express app and become active when the a
 | query params | type          | requirement | remark                                     |
 | ------------ | ------------- | ----------- | ------------------------------------------ |
 | id           | ObjectID(_id) | optional    | highest priority, ignore other params      |
-| cond         | object        | optional    | query object for mongodb, see [mongodb manual](https://docs.mongodb.com/manual) |
+| cond         | json          | optional    | query object for mongodb, see [mongodb manual](https://docs.mongodb.com/manual) |
 | skip         | number        | optional    | number of documents skipped, default 0     |
 | num          | number        | optional    | number of documents requested, default all |
 
@@ -110,7 +110,7 @@ The request body (some document props to update) is also required in json. The o
 | query params | type          | requirement | remark                                |
 | ------------ | ------------- | ----------- | ------------------------------------- |
 | id           | ObjectID(_id) | required    | highest priority, ignore "cond" param |
-| cond         | object        | optional    | query object for mongodb, see [mongodb manual](https://docs.mongodb.com/manual) |
+| cond         | json          | optional    | query object for mongodb, see [mongodb manual](https://docs.mongodb.com/manual) |
 
 No request body is needed. 
 
