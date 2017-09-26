@@ -1,0 +1,33 @@
+{
+  "name": "restal",
+  "version": "0.1.0",
+  "description": "A Express restful api generator with Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siubaak/restal.git"
+  },
+  "keywords": [
+    "restful",
+    "api",
+    "express",
+    "mongoose",
+    "mongodb"
+  ],
+  "author": "Siubaak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Siubaak/restal/issues"
+  },
+  "homepage": "https://github.com/Siubaak/restal#readme",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "mocha": "^3.5.3",
+    "mongoose": "^4.11.12",
+    "supertest": "^3.0.0"
+  }
+}
