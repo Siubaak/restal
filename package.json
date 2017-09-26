@@ -4,7 +4,7 @@
   "description": "A Express restful api generator with Mongoose",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
   "devDependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
-    "mongoose": "^4.11.12"
+    "mocha": "^3.5.3",
+    "mongoose": "^4.11.12",
+    "supertest": "^3.0.0"
   }
 }

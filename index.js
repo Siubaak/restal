@@ -1,4 +1,4 @@
-class REST {
+class Restal {
     // Constructor
     /**
      * Create a restal api instance
@@ -28,7 +28,7 @@ class REST {
                 return res.status(400).send({ err: err.message || 'wrong params' })
             }
         } else {
-            if (cond) {
+            if (cond && typeof cond !== 'object') {
                 try {
                     cond = JSON.parse(cond)
                 } catch (err) {
@@ -97,7 +97,7 @@ class REST {
                 return res.status(400).send({ err: err.message || 'wrong params' })
             }
         } else {
-            if (cond) {
+            if (cond && typeof cond !== 'object') {
                 try {
                     cond = JSON.parse(cond)
                 } catch (err) {
@@ -111,8 +111,8 @@ class REST {
             }
         }
         if (this._hasNext.delete) next(id)
-        else if (result.result.n) res.status(200).send({ result: 'success', id })
-        else res.status(400).send({ err: 'no id-matched document' })
+        else if (result.result.ok) res.status(200).send({ result: 'success', id })
+        else res.status(400).send({ err: 'no id-or-condition-matched document' })
     }
     // Public fields and methods
     get uri () { return this._uri }
@@ -124,7 +124,7 @@ class REST {
      */
     preHandle (method, handler) {
         method = method.toLowerCase()
-        this._actions[method].unshfit(handler)
+        this._actions[method].unshift(handler)
     }
     /**
      * Add middleware to post-handle the result
@@ -147,4 +147,4 @@ class REST {
     }
 }
 
-module.exports = REST
+module.exports = Restal
