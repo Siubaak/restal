@@ -1,5 +1,8 @@
 # restal
 
+[![](https://img.shields.io/npm/v/restal.svg)](https://www.npmjs.com/package/restal)
+[![](https://img.shields.io/travis/Siubaak/restal.svg)](https://travis-ci.org/Siubaak/restal)
+
 This is a simple restful api generator with express & mongoose.
 
 ## Install
