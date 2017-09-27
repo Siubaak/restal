@@ -111,7 +111,7 @@ The request body (some document props to update) is also required in json. The o
 | id           | ObjectID(_id) | required    | highest priority, ignore "cond" param |
 | cond         | json          | optional    | query object for mongodb, see [mongodb manual](https://docs.mongodb.com/manual) |
 
-No request body is needed. 
+No request body is needed. If all query params are missing, all documents of the collection will be deleted.
 
 ## Extention
 
