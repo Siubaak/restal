@@ -44,17 +44,16 @@ app.listen(8000)
 
 ### Public Fields & Methods
 
-
 | constructor        | remark                       |
 | ------------------ | ---------------------------- |
 | Restal(model, uri) | create a restal api instance |
 
-| public field | remark                                    |
-| ------------ | ----------------------------------------- |
-| uri          | the uri that restal instance mounted      |
-| model        | the model that restal instance associated |
+| field | remark                                    |
+| ----- | ----------------------------------------- |
+| uri   | the uri that restal instance mounted      |
+| model | the model that restal instance associated |
 
-| public method               | remark                               |
+| method                      | remark                               |
 | --------------------------- | ------------------------------------ |
 | inject(app)                 | inject the apis into the express app |
 | preHandle(method, handler)  | unshift pre-hanlde middleware(s)     |
@@ -135,7 +134,7 @@ postApis.preHandle('get', (req, res, next) => {
     // do something here like authorization check
     
     // if next misses, original handler will be blocked
-    // you need to reponse on your own
+    // and you need to reponse on your own
     next()
 })
 // add middleware to post-handle the result

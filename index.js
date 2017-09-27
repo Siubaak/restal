@@ -8,16 +8,15 @@ class Restal {
   constructor(model, uri) {
     this._model = model
     this._uri = uri
-    this._actions = { get: [], post: [], put: [], patch: [], delete: [] }
-    this._hasNext = { get: false, post: false, put: false, patch: false, delete: false }
-    this._generate()
-  }
-  // Private methods
-  _generate() {
-    for (const method in this._actions) {
+    const methods = ['get', 'post', 'put', 'patch', 'delete']
+    this._hasNext = {}
+    this._actions = {}
+    for (const method of methods) {
+      this._hasNext[method] = false
       this._actions[method] = [this['_' + method].bind(this)]
     }
   }
+  // Private methods
   async _get(req, res, next) {
     let { id, cond, skip = 0, num = 0 } = req.query
     let result
